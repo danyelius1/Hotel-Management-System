@@ -8,6 +8,7 @@ if (isset($_POST["submit"])) {
 
     $email =  $_POST["email"];
     $pass = $_POST["password"];
+    $hashed_password = password_hash($pass, PASSWORD_BCRYPT);
 
 // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -16,7 +17,7 @@ if (isset($_POST["submit"])) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO login (email, password) VALUES ('$email', '$pass')";
+    $sql = "INSERT INTO login (email, password) VALUES ('$email', '$hashed_password')";
 
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
@@ -42,17 +43,27 @@ if (isset($_POST["submit"])) {
 </head>
 <body>
 
-<form action="" method="post" class="main-form">
+<div class="main">
 
-    <label for="email">Elektroninis paštas</label>
-    <input type="email" id="email" name="email">
+    <div class="logo">
+        <img src="../images/Logotipas.png" alt="">
+    </div>
 
-    <label for="password">Slaptažodis</label>
-    <input type="password" id="password" name="password">
+    <form action="" method="post" class="main-form">
 
-    <input type="submit" id="submit" name="submit" value="Sign up" class="formos-mygtukas">
+        <label for="email">Elektroninis paštas</label>
+        <input type="email" id="email" name="email">
 
-</form>
+        <label for="password">Slaptažodis</label>
+        <input type="password" id="password" name="password">
+
+        <input type="submit" id="submit" name="submit" value="Sign up" class="formos-mygtukas">
+
+    </form>
+
+</div>
+
+
 
 </body>
 </html>
