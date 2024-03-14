@@ -49,15 +49,38 @@ if (isset($_POST["submit"])) {
         <img src="../images/Logotipas.png" alt="">
     </div>
 
+    <h1>A warm welcome to <span class="Sunset">Sunset Resort!</span></h1>
+    <h3>Would you like to book a stay?</h3>
+
     <form action="" method="post" class="main-form">
 
-        <label for="email">Elektroninis paštas</label>
-        <input type="email" id="email" name="email">
+        <fieldset>
+            <legend>Date</legend>
+            <label for="check-in" id="check-in">Check-in</label>
+            <input type="date" name="check-in" id="check-in">
+            <label for="check-out" id="check-out">Check-out</label>
+            <input type="date" name="check-out" id="check-out">
+        </fieldset>
 
-        <label for="password">Slaptažodis</label>
-        <input type="password" id="password" name="password">
+        <fieldset>
+            <legend>sjdgs</legend>
 
-        <input type="submit" id="submit" name="submit" value="Sign up" class="formos-mygtukas">
+            <label for="Rooms" id="Rooms">Rooms</label>
+            <input type="number" name="Rooms" id="Rooms" value="0" required>
+
+            <label for="Adults" id="Adults">Adults</label>
+            <input type="number" name="Adults" id="Adults" value="0" required>
+
+
+            <label for="Children" id="Children">Children</label>
+            <input type="number" name="Children" id="Children" value="0" required>
+
+            <label for="Pets" id="Pets">Pets</label>
+            <input type="number" name="Pets" id="Pets" value="0" required>
+
+        </fieldset>
+
+        <input type="submit" id="submit" name="submit" value="Book Now" class="formos-mygtukas">
 
     </form>
 
