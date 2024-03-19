@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ccc;
+    padding: 15px;
+}
+
+.dates {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dates input {
+    width: 150px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options input {
+    width: 30px;
+    height: 30px;
+}
+
+.book-now {
+    width: 100%;
+    padding: 10px 0;
+}
